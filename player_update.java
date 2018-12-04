@@ -4,6 +4,8 @@ public class player {
 
 	private String name;
 	private int numTries;
+	private double balance = 1000;
+	priavate int gamesPlayed = 0;
 	public ArrayList <Integer> numList;
 
 	//Set player name
@@ -23,8 +25,10 @@ public class player {
 		return numTries;
 	}
 
-	public player(String playerName){
+	public player(String playerName, int gameplay, double bal){
 		name = playerName;
+		gamesPlayed = gameplay;
+		balance = bal;
 		numTries = 0;
 		numList = new ArrayList <Integer>();
 	}
@@ -41,5 +45,16 @@ public class player {
 		}
 		return answer;
 	}
-
+	public void changeBalance(double x)
+	{
+		balance += x;
+	}
+	public double getBalance()
+	{
+		return balance;
+	}
+	public void addGame()
+	{
+		gamesPlayed++;	
+	}
 }
